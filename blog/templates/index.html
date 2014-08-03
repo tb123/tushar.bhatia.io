@@ -1,9 +1,68 @@
 <!DOCTYPE html>
 {% autoescape true %}
 <html>
-  <body>
-    <h1>Tushar Bhatia's Homepage</h1>
-    <p>I'm currently in my third year of Software Engineering at The University of Sydney, Australia. You can view my <a href="/blog/files/tushar-bhatia-resume.pdf">resume (PDF) here</a>.</p>
-  </body>
+<body>
+  <head>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-53476319-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <div class="jumbotron alert-info text-center">
+    <h2>Tushar Bhatia <small><a href="/static/files/tushar-bhatia-resume.pdf">resume (PDF)</a></small></h2>
+    <p>I love software. I'm currently in my third year of Software Engineering at The University of Sydney, Australia.</p>
+    <div class="">
+      <img data-src="holder.js/140x140" class="img-circle" alt="140x140" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQwIj48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjcwIiB5PSI3MCIgc3R5bGU9ImZpbGw6I2FhYTtmb250LXdlaWdodDpib2xkO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2RvbWluYW50LWJhc2VsaW5lOmNlbnRyYWwiPjE0MHgxNDA8L3RleHQ+PC9zdmc+" style="width: 140px; height: 140px;">
+    </div>
+  </div>
+
+  <div class="col-md-2"></div>
+  <div class="col-md-2">
+    <div class="panel panel-default">
+      <div class="panel-heading"><b>My Blog Posts</b></div>
+      <div class="panel-body">
+        {% if post_count == 0 %}
+        <p>I haven't written any blog posts yet. Stay tuned, they're coming!</p>
+        {% else %}
+        {% for post in posts %}
+        <!-- <div class="col-md-2"></div> -->
+        <div class="panel panel-info">
+          <div class="panel-heading alert-warning">
+            <span class="glyphicon glyphicon-align-left"></span> {{ post.title }}
+          </div>
+          <div class="panel-body">
+            {{ post.content }}
+          </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-info">
+      <div class="panel-heading"><b>What I'm Doing Right Now</b></div>
+      <div class="panel-body">
+        <ul>
+          <li>I've recently started to contribute to the Django project and Mozilla Alert Manager. You can checkout my contributions on my Github profile: <a href="http://github.com/tb123">tb123</a>. I'm really excited about this.</li>
+          <li>Working part time as a Python developer at Recompute.</li>
+          <li>Studying Software Engineering full time at The University of Sydney, which is located in - you guessed it - Sydney, Australia.</li>
+          <li>I'm exploring Node.js, MongoDB and Go.</li>
+          <li>Building this website and drafting some technical blog posts related to my experiences with technology.</li>
+          <li>I love Vim, but I like trying out new things, so I'm giving <a href="http://www.atom.io/">Atom</a> a go.</li>
+          <li>Reading way too much <a href="http://news.ycombinator.com/">Hacker News</a>.</li>
+        </ul>
+        <p class="text-muted">Last updated 3/08/2014</p>
+      </div>
+    </div>
+  </div>
+  <script src="/static/js/bootstrap.min.js"></script>
+</body>
 </html>
 {% endautoescape %}

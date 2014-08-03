@@ -13,7 +13,12 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     autoescape=True)
 
 # URL Routes
-routes = [(r'/', 'blog.views.MainPage'),]
+routes = [
+    # Blog App
+    (r'/', 'blog.views.MainPage'),
+    (r'/blog/edit/', 'blog.views.BlogEditPage'),
+    (r'/blog/edit/(\d+)/', 'blog.views.BlogEditPage'),
+]
 
 # Webapp2 Config Settings
 config = {}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% autoescape false %}
+<html>
+  <body>
+    <h1>Edit Blog Post</h1>
+    <form action="/blog/edit/" method="post">
+        <input type="text" name="title" placeholder="Enter a title" value="{{ blog_post.title }}"/><br/>
+        <textarea name="content" placeholder="Start writing a new blog post...">{{ blog_post.content }}</textarea><br/>
+        Publish: <input type="checkbox" name="is_published" value="1" /><br/>
+        {% if blog_post %}
+            date added: {{ blog_post.date }}<br/>
+        {% endif %}
+        <input type="submit" name="submit" value="Save" />
+
+    </form>
+  </body>
+</html>
+{% endautoescape %}

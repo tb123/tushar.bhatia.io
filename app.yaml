@@ -6,6 +6,10 @@ threadsafe: true
 
 # [START handlers]
 handlers:
+# - url: /blog/files
+#   static_dir: blog/static/files
+- url: /static/
+  static_dir: blog/static/
 - url: /blog/files
   static_dir: blog/static/files
 - url: /.*
